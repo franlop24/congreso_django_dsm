@@ -3,5 +3,11 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Home Page</h1>
+<style>
+    #portada {
+        width: 100%;
+    }
+</style>
+{% load static %}
+<img id="portada" src="{% static 'images/portada.jpg' %}" alt="Portada">
 {% endblock %}
