@@ -28,12 +28,13 @@ class Workshop(models.Model):
     description = models.TextField("Descripción")
     # instructor = models.CharField("Instructor", max_length=100)
     capacity = models.IntegerField("Capacidad")
-    
     classroom = models.ForeignKey(Classroom, 
                                 related_name="workshops", 
                                 on_delete=models.SET_NULL,
                                 null=True, blank=True)
-    
+    image = models.ImageField("Imagen de Taller", 
+                              upload_to="images",
+                              null=True, blank=True)
     date = models.DateField("Fecha")
     start_time = models.TimeField("Hora de inicio")
     end_time = models.TimeField("Hora de termino")

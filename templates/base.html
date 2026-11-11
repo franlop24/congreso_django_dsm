@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConTec 2026 | {% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <nav>
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'hello' %}">Hello</a>
-        <a href="{% url 'mayus' 'franlop' %}">Upper</a>
-        <a href="{% url 'users' %}">Users</a>
-        <a href="{% url 'workshops:workshop_list' %}">Talleres</a>
-    </nav>
+    <header>
+        <img src="" alt="Logo">
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'workshops:workshop_list' %}">Talleres</a>
+        </nav>
+    </header>
     {% block content %}
     {% endblock %}
 </body>

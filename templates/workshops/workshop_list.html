@@ -1,11 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        width: 300px;
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+
 <div class="container">
-    <ul>
-        {% for w in workshops %}
-        <li>{{ w }}</li>
-        {% endfor %}
-    </ul>
+    {% for w in workshops %}
+    <div class="card">
+        {% if w.image %}
+        <img src="{{ w.image.url }}" alt="" width="200px">
+        {% endif %}
+        <h2>{{ w.name }}</h2>
+        <p>{{ w.description }}</p>
+        <p>{{ w.classroom }}</p>
+        <p>{{ w.date }} - {{ w.start_time }}</p>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
