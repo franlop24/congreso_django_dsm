@@ -2,33 +2,24 @@
 
 {% block content %}
 
-<style>
-    .container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+<h1>Talleres 2026</h1>
 
-    .card {
-        width: 300px;
-        border: 1px solid black;
-        padding: 20px;
-        border-radius: 10px;
-    }
-</style>
-
-
-<div class="container">
+<div class="container-workshops">
     {% for w in workshops %}
     <div class="card">
         {% if w.image %}
-        <img src="{{ w.image.url }}" alt="" width="200px">
+        <div class="card-header" style="background-image: url('{{ w.image.url }}');">
+            {% else %}
+        <div class="card-header">
         {% endif %}
-        <h2>{{ w.name }}</h2>
-        <p>{{ w.description }}</p>
-        <p>{{ w.classroom }}</p>
-        <p>{{ w.date }} - {{ w.start_time }}</p>
+            <h2>{{ w.name }}</h2>
+        </div>
+        <div class="card-body">
+            <p>{{ w.description }}</p>
+            <p>{{ w.classroom }}</p>
+            <p>{{ w.date }} - {{ w.start_time }}</p>
+            <a href="">Detalles</a>
+        </div>
     </div>
     {% endfor %}
 </div>
