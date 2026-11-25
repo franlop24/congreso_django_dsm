@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalles{% endblock %}
+
+{% block content %}
+<h1>{{ workshop.name }}</h1>
+<img src="{{ workshop.image.url }}" alt="" width="300px">
+<a href="" class="btn">Registrarme</a>
+{% endblock %}

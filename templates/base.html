@@ -13,6 +13,17 @@
         <nav>
             <a href="{% url 'home' %}">Home</a>
             <a href="{% url 'workshops:workshop_list' %}">Talleres</a>
+            {% if not user.is_authenticated %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="">Registro</a>
+            {% endif %}
+        
+        {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn sm">Salir</button>
+        </form>
+        {% endif %}
         </nav>
     </header>
     <div class="container">
