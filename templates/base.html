@@ -15,7 +15,7 @@
             <a href="{% url 'workshops:workshop_list' %}">Talleres</a>
             {% if not user.is_authenticated %}
             <a href="{% url 'login' %}">Login</a>
-            <a href="">Registro</a>
+            <a href="{% url 'users:register_student' %}">Registro</a>
             {% endif %}
         
         {% if user.is_authenticated %}

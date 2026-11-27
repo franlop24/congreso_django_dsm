@@ -20,9 +20,6 @@ class Classroom(models.Model):
         verbose_name_plural = "Salones/Laboratorios"
 
 
-class Instructor(models.Model):
-    pass
-
 class Workshop(models.Model):
     name = models.CharField("Nombre", max_length=100)
     description = models.TextField("Descripción")
